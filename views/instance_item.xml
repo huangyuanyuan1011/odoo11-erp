@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--化验-->
+<odoo>
+    <data>
+        <record id="view_flow_instance_item_form" model="ir.ui.view">
+            <field name="name">流程实例项目</field>
+            <field name="model">flow.instance_item</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="instance_id"/>
+                            <field name="activity_id"/>
+                            <field name="parent_id"/>
+                            <field name="children_id"/>
+                            <field name="item_executor_ids"/>
+                            <field name="all_exec"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_flow_instance_item_tree" model="ir.ui.view">
+            <field name="name">flow.instance item tree</field>
+            <field name="model">flow.instance_item</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="instance_id"/>
+                    <field name="activity_id"/>
+                    <field name="item_executor_ids"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_flow_instance_item_filter" model="ir.ui.view">
+            <field name="name">flow.instance_item.filter</field>
+            <field name="model">flow.instance_item</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="instance_id"/>
+                    <field name="activity_id"/>
+                    <field name="item_executor_ids"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_flow_instance_item" model="ir.actions.act_window">
+            <field name="name">流程实例项目</field>
+            <field name="res_model">flow.instance_item</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_flow_instance_item_filter"/>
+            <field name="help" type="html">
+                <p><b>No instance item found!</b></p>
+                <p>You should try others search criteria.</p>
+            </field>
+        </record>
+    </data>
+</odoo>

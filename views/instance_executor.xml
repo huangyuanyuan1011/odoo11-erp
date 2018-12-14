@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--化验-->
+<odoo>
+    <data>
+        <record id="view_flow_instance_executor_form" model="ir.ui.view">
+            <field name="name">流程实例执行人</field>
+            <field name="model">flow.instance_executor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="activity_id"/>
+                            <field name="type"/>
+                            <field name="tag_id"/>
+                            <field name="field_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_flow_instance_executor_tree" model="ir.ui.view">
+            <field name="name">flow.instance executor tree</field>
+            <field name="model">flow.instance_executor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="activity_id"/>
+                    <field name="type"/>
+                    <field name="tag_id"/>
+                    <field name="field_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_flow_instance_executor_filter" model="ir.ui.view">
+            <field name="name">flow.instance_executor.filter</field>
+            <field name="model">flow.instance_executor</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="activity_id"/>
+                    <field name="type"/>
+                    <field name="tag_id"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_flow_instance_executor" model="ir.actions.act_window">
+            <field name="name">流程实例执行人</field>
+            <field name="res_model">flow.instance_executor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_flow_instance_executor_filter"/>
+            <field name="help" type="html">
+                <p><b>No instance found!</b></p>
+                <p>You should try others search criteria.</p>
+            </field>
+        </record>
+    </data>
+</odoo>

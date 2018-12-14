@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="flow.buttons">
+        <div class="o_btn_flow" style="float: left;">
+            <t t-if="widget.submit">
+                <button type="button" id="submit" style="margin-left: 5px;" class="btn btn-sm btn-default o_btn_flow_submit">提交</button>
+            </t>
+            <t t-if="widget.approval">
+                <button type="button" id="approve" style="margin-left: 5px;" class="btn btn-sm btn-default o_btn_flow_approve">批准</button>
+                <button type="button" id="refuse" class="btn btn-sm btn-default o_btn_flow_refuse">拒绝</button>
+            </t>
+            <t t-if="widget.have_read">
+                <button type="button" id="have_read" style="margin-left: 5px;" class="btn btn-sm btn-default o_btn_flow_have_read">已读</button>
+            </t>
+            <button type="button" id="chart" style="margin-left: 5px;" t-attf-value="{{widget.instance_id}}" class="btn btn-sm btn-default o_btn_flow_chart">流程图</button>
+        </div>
+    </t>
+</templates>

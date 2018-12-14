@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--化验-->
+<odoo>
+    <data>
+        <record id="view_flow_test_from" model="ir.ui.view">
+            <field name="name">流程测试</field>
+            <field name="model">flow.test</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--<button name="submit" string="submit" type="object"/>-->
+                    <!--<header>-->
+                        <!--<button name="submit" string="submit" type="object"/>-->
+                    <!--</header>-->
+                    <sheet>
+                        <group col="2">
+                            <field name="id"/>
+                            <field name="name"/>
+                            <field name="user_id"/>
+                            <field name="string" attrs="{'invisible':[('name', '!=', 'abc')]}"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">    <!--oe_chatter 什么意思  这里是什么意思-->
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_flow_test_tree" model="ir.ui.view">
+            <field name="name">flow.test tree</field>
+            <field name="model">flow.test</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="string"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_flow_test_filter" model="ir.ui.view">
+            <field name="name">flow.test.filter</field>
+            <field name="model">flow.test</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="id"/>
+               </search>
+            </field>
+        </record>
+        <record id="action_flow_test" model="ir.actions.act_window">
+            <field name="name">流程测试</field>
+            <field name="res_model">flow.test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_flow_test_filter"/>
+            <field name="help" type="html">
+              <p><b>No flow found!</b></p>
+              <p>You should try others search criteria.</p>
+            </field>
+        </record>
+    </data>
+</odoo>

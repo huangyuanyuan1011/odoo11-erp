@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--化验-->
+<odoo>
+    <data>
+        <record id="view_workflow_adiagram" model="ir.ui.view">
+            <field name="name">flow.aInsDiagram</field>
+            <field name="model">flow.flow</field>
+            <field name="arch" type="xml">
+                <aInsDiagram string="Workflow Editor">
+                </aInsDiagram>
+            </field>
+        </record>
+        <record id="view_flow_flow_from" model="ir.ui.view">
+            <field name="name">流程</field>
+            <field name="model">flow.flow</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="name"/>
+                            <field name="model_id"/>
+                            <field name="is_valid"/>
+                            <field name="activity_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_flow_flow_tree" model="ir.ui.view">
+            <field name="name">flow.flow tree</field>
+            <field name="model">flow.flow</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="model_id"/>
+                    <field name="activity_ids"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_flow_flow_filter" model="ir.ui.view">
+            <field name="name">flow.flow.filter</field>
+            <field name="model">flow.flow</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="model_id"/>
+                    <field name="activity_ids"/>
+                    <field name="id"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_flow_flow" model="ir.actions.act_window">
+            <field name="name">流程</field>
+            <field name="res_model">flow.flow</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,aInsDiagram</field>
+            <field name="search_view_id" ref="view_flow_flow_filter"/>
+            <field name="help" type="html">
+                <p><b>No flow found!</b></p>
+                <p>You should try others search criteria.</p>
+            </field>
+        </record>
+    </data>
+</odoo>

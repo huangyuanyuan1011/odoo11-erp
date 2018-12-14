@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <menuitem id="menu_flow_pending" web_icon="flow,static/description/impress.png" name="待审批" action="action_flow_pending" sequence="2"/>
+        <menuitem id="menu_flow" web_icon="flow,static/description/icon.png" groups="base.group_system" name="流程管理中心" sequence="10"/>
+        <menuitem id="menu_flow_test" parent="menu_flow" action="action_flow_test"/>
+        <menuitem id="menu_flow_flow" parent="menu_flow" action="action_flow_flow"/>
+        <menuitem id="menu_flow_activity" parent="menu_flow" action="action_flow_activity"/>
+        <menuitem id="menu_flow_transition" parent="menu_flow" action="action_flow_transition"/>
+        <menuitem id="menu_flow_instance" parent="menu_flow" action="action_flow_instance"/>
+        <menuitem id="menu_flow_instance_activity" parent="menu_flow" action="action_flow_instance_activity"/>
+        <menuitem id="menu_flow_instance_executor" parent="menu_flow" action="action_flow_instance_executor"/>
+        <menuitem id="menu_flow_instance_transition" parent="menu_flow" action="action_flow_instance_transition"/>
+        <menuitem id="menu_flow_instance_item" parent="menu_flow" action="action_flow_instance_item"/>
+        <menuitem id="menu_flow_instance_item_executor" parent="menu_flow" action="action_flow_instance_item_executor"/>
+    </data>
+</odoo>

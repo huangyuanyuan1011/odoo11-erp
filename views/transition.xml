@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--化验-->
+<odoo>
+    <data>
+        <record id="view_flow_transition_from" model="ir.ui.view">
+            <field name="name">流程转化</field>
+            <field name="model">flow.transition</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="act_from_id"/>
+                            <field name="act_to_id"/>
+                            <field name="model_id"/>
+                            <field name="model" invisible="1"/>
+                            <field name="domain" attrs="{'invisible': [('model', '=', False)]}"
+                                   widget="domain" options="{'model': 'model'}"
+                                   class="o_row"/>
+                            <field name="hr_domain"
+                                   widget="domain" options="{'model': 'hr.employee'}"
+                                   class="o_row"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_flow_transition_tree" model="ir.ui.view">
+            <field name="name">flow.transition tree</field>
+            <field name="model">flow.transition</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="act_from_id"/>
+                    <field name="act_to_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_flow_transition_filter" model="ir.ui.view">
+            <field name="name">flow.transition.filter</field>
+            <field name="model">flow.transition</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="act_from_id"/>
+                    <field name="act_to_id"/>
+               </search>
+            </field>
+        </record>
+        <record id="action_flow_transition" model="ir.actions.act_window">
+            <field name="name">流程转化</field>
+            <field name="res_model">flow.transition</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_flow_transition_filter"/>
+            <field name="help" type="html">
+              <p><b>No transition found!</b></p>
+              <p>You should try others search criteria.</p>
+            </field>
+        </record>
+    </data>
+</odoo>

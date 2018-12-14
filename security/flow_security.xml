@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+        <!--管理-->
+         <record id="module_category_flow" model="ir.module.category">
+             <field name="name">审批流</field>
+             <field name="description">审批流管理</field>
+             <field name="sequence">1</field>
+         </record>
+       <!--只读-->
+        <record id="group_flow_readonly" model="res.groups">
+            <field name="name">只读</field>
+            <field name="category_id" ref="module_category_flow"/>
+            <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+            <field name="comment">flow_readonly</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="view_flow_instance_aInsDiagram" model="ir.ui.view">
+            <field name="name">flow instance aInsDiagram</field>
+            <field name="model">flow.instance</field>
+            <field name="arch" type="xml">
+                <aInsDiagram string="Chart">
+                </aInsDiagram>
+            </field>
+        </record>
+        <record id="view_flow_instance_form" model="ir.ui.view">
+            <field name="name">流程实例</field>
+            <field name="model">flow.instance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2">
+                            <field name="model_id"/>
+                            <field name="flow_id"/>
+                            <field name="res_id"/>
+                            <field name="activity_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_flow_instance_tree" model="ir.ui.view">
+            <field name="name">flow.instance tree</field>
+            <field name="model">flow.instance</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="model_id"/>
+                    <field name="flow_id"/>
+                    <field name="res_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_flow_instance_filter" model="ir.ui.view">
+            <field name="name">flow.instance.filter</field>
+            <field name="model">flow.instance</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="model_id"/>
+                    <field name="flow_id"/>
+                    <field name="res_id"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_flow_instance" model="ir.actions.act_window">
+            <field name="name">流程实例</field>
+            <field name="res_model">flow.instance</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,aInsDiagram</field>
+            <field name="search_view_id" ref="view_flow_instance_filter"/>
+            <field name="help" type="html">
+                <p><b>No instance found!</b></p>
+                <p>You should try others search criteria.</p>
+            </field>
+        </record>
+    </data>
+</odoo>

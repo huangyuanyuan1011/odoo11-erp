@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_group_user_test,group_user_test,model_flow_test,base.group_user,1,0,0,0
+
+access_group_user_flow,group_user_flow,model_flow_flow,base.group_user,1,0,0,0
+access_group_user_executor,group_user_executor,model_flow_executor,base.group_user,1,0,0,0
+access_group_user_activity,group_user_activity,model_flow_activity,base.group_user,1,0,0,0
+access_group_user_transition,group_user_transition,model_flow_transition,base.group_user,1,0,0,0
+access_group_user_instance,group_user_instance,model_flow_instance,base.group_user,1,0,0,0
+access_group_user_instance_activity,group_user_instance_activity,model_flow_instance_activity,base.group_user,1,0,0,0
+access_group_user_instance_executor,group_user_instance_executor,model_flow_instance_executor,base.group_user,1,0,0,0
+access_group_user_instance_transition,group_user_instance_transition,model_flow_instance_transition,base.group_user,1,0,0,0
+access_group_user_instance_item,group_user_instance_item,model_flow_instance_item,base.group_user,1,0,0,0
+access_group_user_instance_item_executor,group_user_instance_item_executor,model_flow_instance_item_executor,base.group_user,1,0,0,0
+

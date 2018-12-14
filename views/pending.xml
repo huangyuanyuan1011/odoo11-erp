@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="view_flow_pending_kanban" model="ir.ui.view">
+            <field name="name">待审批</field>
+            <field name="model">flow.instance_item_executor</field>
+            <field name="arch" type="xml">
+                <kanban create="0">
+                    <field name="record_name"/>
+                    <field name="record_model_name"/>
+                    <field name="record_create_date"/>
+                    <field name="record_company_name"/>
+                    <field name="record_state"/>
+                    <button name="goto" type="object" string="查看" class="oe_highlight"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div>
+                                <div class="oe_module_desc">
+                                    <span>名称：<field name="record_company_name"/></span>
+                                    <br/>
+                                    <span>单据：<field name="record_model_name"/></span>
+                                    <br/>
+                                    <span>名称：<field name="record_name"/></span>
+                                    <br/>
+                                    <span>创建时间：<field name="record_create_date"/></span>
+                                    <br/>
+                                    <span>状态：<field name="record_state"/></span>
+                                </div>
+                                <div>
+                                    <button type="object" class="btn btn-primary pull-right btn-sm" name="goto">查看并处理</button>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="action_flow_pending" model="ir.actions.act_window">
+            <field name="name">待审批</field>
+            <field name="res_model">flow.instance_item_executor</field>
+            <field name="view_mode">kanban</field>
+            <field name="domain">[['res_users_id', '=', uid], ['is_pass', '=', False]]</field>
+            <field name="help" type="html">
+                <p><b>No flow found!</b></p>
+                <p>You should try others search criteria.</p>
+            </field>
+        </record>
+    </data>
+</odoo>

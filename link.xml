@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="web_adiagram assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/flow/static/src/js/ainsdiagram_controller.js"></script>
+                <script type="text/javascript" src="/flow/static/src/js/ainsdiagram_renderer.js"></script>
+                <script type="text/javascript" src="/flow/static/src/js/ainsdiagram_model.js"></script>
+                <script type="text/javascript" src="/flow/static/src/js/ainsdiagram_view.js"></script>
+                <script type="text/javascript" src="/flow/static/src/js/view_registry.js"></script>
+                <script type="text/javascript" src="/flow/static/src/js/aform_controller.js"></script>
+                <script type="text/javascript" src="/flow/static/src/js/aform_renderer.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

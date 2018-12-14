@@ -1,0 +1,37 @@
+  # -*- coding: utf-8 -*-
+{
+    'name': 'Flow',
+    'version': '0.1',
+    'category': 'Tools',
+    'description': """
+Flow
+""",
+    'author': 'lipeng',
+    'website': 'https://www.ylnlp.com',
+    'summary': 'Flow',
+    'data': [
+        'link.xml',
+        'security/flow_security.xml',
+        'security/ir.model.access.csv',
+        'views/test.xml',
+        'views/activity.xml',
+        'views/flow.xml',
+        'views/transition.xml',
+        'views/instance.xml',
+        'views/instance_activity.xml',
+        'views/instance_executor.xml',
+        'views/instance_transition.xml',
+        'views/instance_item.xml',
+        'views/instance_item_executor.xml',
+        'views/pending.xml',
+        'menu.xml',
+    ],
+    'js': ['static/src/js/*.js'],
+    'css': ['static/src/css/*.css'],
+    'qweb': ['static/src/xml/*.xml'],
+    'depends': ['base', 'mail', 'hr', 'web', 'resource'],
+    'sequence': 0,
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}
